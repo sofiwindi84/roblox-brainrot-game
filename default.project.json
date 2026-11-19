@@ -1,0 +1,217 @@
+{
+  "name": "brainrot-bay",
+  "tree": {
+    "$className": "DataModel",
+    "Players": {},
+    "ReplicatedStorage": {
+      "Shared": {
+        "$className": "Folder",
+        "BrainrotData": {
+          "$path": "src/shared/BrainrotData.luau"
+        },
+        "Config": {
+          "$path": "src/shared/Config.luau"
+        }
+      },
+      "Remotes": {
+        "$className": "Folder",
+        "BuyBrainrot": {
+          "$className": "RemoteFunction"
+        },
+        "LockBase": {
+          "$className": "RemoteEvent"
+        },
+        "RequestRebirth": {
+          "$className": "RemoteEvent"
+        },
+        "StatsUpdate": {
+          "$className": "RemoteEvent"
+        },
+        "Notify": {
+          "$className": "RemoteEvent"
+        },
+        "ConveyorUpdate": {
+          "$className": "RemoteEvent"
+        }
+      }
+    },
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/server"
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "Client": {
+          "$path": "src/client"
+        }
+      }
+    },
+    "Workspace": {
+      "$properties": {
+        "FilteringEnabled": true
+      },
+      "Island": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.93, 0.8, 0.55], "Material": "Sand", "Position": [0, -1, 0], "Size": [220, 2, 220]}},
+      "Water": {"$className": "Part", "$properties": {"Anchored": true, "CanCollide": false, "Color": [0.1, 0.45, 0.8], "Material": "SmoothPlastic", "Position": [0, -2.5, 0], "Size": [700, 1, 700], "Transparency": 0.3}},
+      "Belt1": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [-65, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt2": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [-55, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt3": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [-45, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt4": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [-35, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt5": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [-25, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt6": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [-15, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt7": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [-5, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt8": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [5, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt9": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [15, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt10": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [25, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt11": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [35, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt12": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [45, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt13": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [55, 0.5, 0], "Size": [10, 1, 8]}},
+      "Belt14": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.22, 0.22, 0.28], "Material": "Metal", "Position": [65, 0.5, 0], "Size": [10, 1, 8]}},
+      "RailNorth": {"$className": "Part", "$properties": {"Anchored": true, "Color": [1, 0.8, 0.1], "Material": "SmoothPlastic", "Position": [0, 1.2, -4.5], "Size": [140, 1, 1]}},
+      "RailSouth": {"$className": "Part", "$properties": {"Anchored": true, "Color": [1, 0.8, 0.1], "Material": "SmoothPlastic", "Position": [0, 1.2, 4.5], "Size": [140, 1, 1]}},
+      "SpawnPad": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.1, 1, 0.3], "Material": "Neon", "Position": [-78, 0.5, 0], "Size": [8, 1, 8]}},
+      "EndPad": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.9, 0.15, 0.15], "Material": "SmoothPlastic", "Position": [78, 0.5, 0], "Size": [8, 1, 8]}},
+      "Plot1": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.25, 0.25], "Material": "SmoothPlastic", "Position": [-78, 0.1, -42], "Size": [22, 0.4, 22]}},
+      "Plot1PostA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-88, 1.5, -52], "Size": [1, 3, 1]}},
+      "Plot1PostB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-68, 1.5, -52], "Size": [1, 3, 1]}},
+      "Plot1PostC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-88, 1.5, -32], "Size": [1, 3, 1]}},
+      "Plot1PostD": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-68, 1.5, -32], "Size": [1, 3, 1]}},
+      "Plot1SignPost": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Position": [-78, 2, -30], "Size": [1, 4, 1]}},
+      "Plot1Sign": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-78, 5, -30], "Size": [8, 3, 0.5]}},
+      "Plot2": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.45, 0.95], "Material": "SmoothPlastic", "Position": [-26, 0.1, -42], "Size": [22, 0.4, 22]}},
+      "Plot2PostA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-36, 1.5, -52], "Size": [1, 3, 1]}},
+      "Plot2PostB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-16, 1.5, -52], "Size": [1, 3, 1]}},
+      "Plot2PostC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-36, 1.5, -32], "Size": [1, 3, 1]}},
+      "Plot2PostD": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-16, 1.5, -32], "Size": [1, 3, 1]}},
+      "Plot2SignPost": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Position": [-26, 2, -30], "Size": [1, 4, 1]}},
+      "Plot2Sign": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-26, 5, -30], "Size": [8, 3, 0.5]}},
+      "Plot3": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.2, 0.8, 0.3], "Material": "SmoothPlastic", "Position": [26, 0.1, -42], "Size": [22, 0.4, 22]}},
+      "Plot3PostA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [16, 1.5, -52], "Size": [1, 3, 1]}},
+      "Plot3PostB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [36, 1.5, -52], "Size": [1, 3, 1]}},
+      "Plot3PostC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [16, 1.5, -32], "Size": [1, 3, 1]}},
+      "Plot3PostD": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [36, 1.5, -32], "Size": [1, 3, 1]}},
+      "Plot3SignPost": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Position": [26, 2, -30], "Size": [1, 4, 1]}},
+      "Plot3Sign": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [26, 5, -30], "Size": [8, 3, 0.5]}},
+      "Plot4": {"$className": "Part", "$properties": {"Anchored": true, "Color": [1, 0.8, 0.1], "Material": "SmoothPlastic", "Position": [78, 0.1, -42], "Size": [22, 0.4, 22]}},
+      "Plot4PostA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [68, 1.5, -52], "Size": [1, 3, 1]}},
+      "Plot4PostB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [88, 1.5, -52], "Size": [1, 3, 1]}},
+      "Plot4PostC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [68, 1.5, -32], "Size": [1, 3, 1]}},
+      "Plot4PostD": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [88, 1.5, -32], "Size": [1, 3, 1]}},
+      "Plot4SignPost": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Position": [78, 2, -30], "Size": [1, 4, 1]}},
+      "Plot4Sign": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [78, 5, -30], "Size": [8, 3, 0.5]}},
+      "Plot5": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.65, 0.3, 0.9], "Material": "SmoothPlastic", "Position": [-78, 0.1, 42], "Size": [22, 0.4, 22]}},
+      "Plot5PostA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-88, 1.5, 32], "Size": [1, 3, 1]}},
+      "Plot5PostB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-68, 1.5, 32], "Size": [1, 3, 1]}},
+      "Plot5PostC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-88, 1.5, 52], "Size": [1, 3, 1]}},
+      "Plot5PostD": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-68, 1.5, 52], "Size": [1, 3, 1]}},
+      "Plot5SignPost": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Position": [-78, 2, 30], "Size": [1, 4, 1]}},
+      "Plot5Sign": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-78, 5, 30], "Size": [8, 3, 0.5]}},
+      "Plot6": {"$className": "Part", "$properties": {"Anchored": true, "Color": [1, 0.5, 0.1], "Material": "SmoothPlastic", "Position": [-26, 0.1, 42], "Size": [22, 0.4, 22]}},
+      "Plot6PostA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-36, 1.5, 32], "Size": [1, 3, 1]}},
+      "Plot6PostB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-16, 1.5, 32], "Size": [1, 3, 1]}},
+      "Plot6PostC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-36, 1.5, 52], "Size": [1, 3, 1]}},
+      "Plot6PostD": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-16, 1.5, 52], "Size": [1, 3, 1]}},
+      "Plot6SignPost": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Position": [-26, 2, 30], "Size": [1, 4, 1]}},
+      "Plot6Sign": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [-26, 5, 30], "Size": [8, 3, 0.5]}},
+      "Plot7": {"$className": "Part", "$properties": {"Anchored": true, "Color": [1, 0.4, 0.7], "Material": "SmoothPlastic", "Position": [26, 0.1, 42], "Size": [22, 0.4, 22]}},
+      "Plot7PostA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [16, 1.5, 32], "Size": [1, 3, 1]}},
+      "Plot7PostB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [36, 1.5, 32], "Size": [1, 3, 1]}},
+      "Plot7PostC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [16, 1.5, 52], "Size": [1, 3, 1]}},
+      "Plot7PostD": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [36, 1.5, 52], "Size": [1, 3, 1]}},
+      "Plot7SignPost": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Position": [26, 2, 30], "Size": [1, 4, 1]}},
+      "Plot7Sign": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [26, 5, 30], "Size": [8, 3, 0.5]}},
+      "Plot8": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.1, 0.8, 0.9], "Material": "SmoothPlastic", "Position": [78, 0.1, 42], "Size": [22, 0.4, 22]}},
+      "Plot8PostA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [68, 1.5, 32], "Size": [1, 3, 1]}},
+      "Plot8PostB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [88, 1.5, 32], "Size": [1, 3, 1]}},
+      "Plot8PostC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [68, 1.5, 52], "Size": [1, 3, 1]}},
+      "Plot8PostD": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [88, 1.5, 52], "Size": [1, 3, 1]}},
+      "Plot8SignPost": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Position": [78, 2, 30], "Size": [1, 4, 1]}},
+      "Plot8Sign": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [78, 5, 30], "Size": [8, 3, 0.5]}},
+      "ShopFloor": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.85, 0.75, 0.6], "Material": "SmoothPlastic", "Position": [95, 0.1, 0], "Size": [18, 0.4, 16]}},
+      "ShopBackWall": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.9, 0.8], "Material": "SmoothPlastic", "Position": [103, 3.5, 0], "Size": [1, 7, 16]}},
+      "ShopSideWallNorth": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.9, 0.8], "Material": "SmoothPlastic", "Position": [95, 3.5, -8], "Size": [18, 7, 1]}},
+      "ShopSideWallSouth": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.9, 0.8], "Material": "SmoothPlastic", "Position": [95, 3.5, 8], "Size": [18, 7, 1]}},
+      "ShopFrontWallLeft": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.9, 0.8], "Material": "SmoothPlastic", "Position": [86, 3.5, -5], "Size": [1, 7, 6]}},
+      "ShopFrontWallRight": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.9, 0.8], "Material": "SmoothPlastic", "Position": [86, 3.5, 5], "Size": [1, 7, 6]}},
+      "ShopRoof": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.9, 0.3, 0.2], "Material": "SmoothPlastic", "Position": [95, 7.5, 0], "Size": [20, 1, 18]}},
+      "ShopCounter": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Position": [95, 1, 0], "Size": [10, 2, 2]}},
+      "ShopSign": {"$className": "Part", "$properties": {"Anchored": true, "Color": [1, 0.8, 0.1], "Material": "SmoothPlastic", "Position": [95, 8.5, -9.2], "Size": [12, 2, 0.5]}},
+      "ShopCrate1": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.6, 0.4, 0.2], "Material": "Wood", "Position": [100, 1, 5], "Size": [2, 2, 2]}},
+      "ShopCrate2": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.6, 0.4, 0.2], "Material": "Wood", "Position": [100, 3, 5], "Size": [2, 2, 2]}},
+      "ShopCrate3": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.6, 0.4, 0.2], "Material": "Wood", "Position": [102, 1, -5], "Size": [3, 2, 3]}},
+      "LighthouseBase": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Size": [1, 10, 10], "Shape": "Cylinder", "CFrame": [-95, 0.5, -95, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "LighthouseTower": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Size": [12, 6, 6], "Shape": "Cylinder", "CFrame": [-95, 6, -95, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "LighthouseGallery": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.9, 0.2, 0.2], "Material": "SmoothPlastic", "Size": [1, 9, 9], "Shape": "Cylinder", "CFrame": [-95, 12.5, -95, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "LighthouseLamp": {"$className": "Part", "$properties": {"Anchored": true, "Color": [1, 0.9, 0.4], "Material": "Glass", "Position": [-95, 15, -95], "Size": [4, 4, 4], "Transparency": 0.3}},
+      "LighthouseRoof": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.9, 0.2, 0.2], "Material": "SmoothPlastic", "Position": [-95, 18, -95], "Size": [6, 3, 6], "Shape": "Ball"}},
+      "Palm1Trunk": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Size": [6, 1.5, 1.5], "Shape": "Cylinder", "CFrame": [-60, 3, -70, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm1LeafA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [-58, 6.3, -70, 0.9063, 0.4226, 0.0, -0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm1LeafB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [-62, 6.3, -70, 0.9063, -0.4226, 0.0, 0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm1LeafC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [2, 0.3, 5], "CFrame": [-60, 6.3, -68, 1.0, 0.0, 0.0, 0.0, 0.9063, -0.4226, 0.0, 0.4226, 0.9063]}},
+      "Palm2Trunk": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Size": [6, 1.5, 1.5], "Shape": "Cylinder", "CFrame": [-30, 3, 70, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm2LeafA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [-28, 6.3, 70, 0.9063, 0.4226, 0.0, -0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm2LeafB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [-32, 6.3, 70, 0.9063, -0.4226, 0.0, 0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm2LeafC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [2, 0.3, 5], "CFrame": [-30, 6.3, 72, 1.0, 0.0, 0.0, 0.0, 0.9063, -0.4226, 0.0, 0.4226, 0.9063]}},
+      "Palm3Trunk": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Size": [6, 1.5, 1.5], "Shape": "Cylinder", "CFrame": [20, 3, -70, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm3LeafA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [22, 6.3, -70, 0.9063, 0.4226, 0.0, -0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm3LeafB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [18, 6.3, -70, 0.9063, -0.4226, 0.0, 0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm3LeafC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [2, 0.3, 5], "CFrame": [20, 6.3, -68, 1.0, 0.0, 0.0, 0.0, 0.9063, -0.4226, 0.0, 0.4226, 0.9063]}},
+      "Palm4Trunk": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Size": [6, 1.5, 1.5], "Shape": "Cylinder", "CFrame": [50, 3, 70, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm4LeafA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [52, 6.3, 70, 0.9063, 0.4226, 0.0, -0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm4LeafB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [48, 6.3, 70, 0.9063, -0.4226, 0.0, 0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm4LeafC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [2, 0.3, 5], "CFrame": [50, 6.3, 72, 1.0, 0.0, 0.0, 0.0, 0.9063, -0.4226, 0.0, 0.4226, 0.9063]}},
+      "Palm5Trunk": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Size": [6, 1.5, 1.5], "Shape": "Cylinder", "CFrame": [-90, 3, 30, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm5LeafA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [-88, 6.3, 30, 0.9063, 0.4226, 0.0, -0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm5LeafB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [-92, 6.3, 30, 0.9063, -0.4226, 0.0, 0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm5LeafC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [2, 0.3, 5], "CFrame": [-90, 6.3, 32, 1.0, 0.0, 0.0, 0.0, 0.9063, -0.4226, 0.0, 0.4226, 0.9063]}},
+      "Palm6Trunk": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Size": [6, 1.5, 1.5], "Shape": "Cylinder", "CFrame": [90, 3, -60, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm6LeafA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [92, 6.3, -60, 0.9063, 0.4226, 0.0, -0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm6LeafB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [88, 6.3, -60, 0.9063, -0.4226, 0.0, 0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm6LeafC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [2, 0.3, 5], "CFrame": [90, 6.3, -58, 1.0, 0.0, 0.0, 0.0, 0.9063, -0.4226, 0.0, 0.4226, 0.9063]}},
+      "Palm7Trunk": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Size": [6, 1.5, 1.5], "Shape": "Cylinder", "CFrame": [0, 3, -85, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm7LeafA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [2, 6.3, -85, 0.9063, 0.4226, 0.0, -0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm7LeafB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [-2, 6.3, -85, 0.9063, -0.4226, 0.0, 0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm7LeafC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [2, 0.3, 5], "CFrame": [0, 6.3, -83, 1.0, 0.0, 0.0, 0.0, 0.9063, -0.4226, 0.0, 0.4226, 0.9063]}},
+      "Palm8Trunk": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.35, 0.15], "Material": "Wood", "Size": [6, 1.5, 1.5], "Shape": "Cylinder", "CFrame": [60, 3, -80, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm8LeafA": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [62, 6.3, -80, 0.9063, 0.4226, 0.0, -0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm8LeafB": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [5, 0.3, 2], "CFrame": [58, 6.3, -80, 0.9063, -0.4226, 0.0, 0.4226, 0.9063, 0.0, 0.0, 0.0, 1.0]}},
+      "Palm8LeafC": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.6, 0.2], "Material": "SmoothPlastic", "Size": [2, 0.3, 5], "CFrame": [60, 6.3, -78, 1.0, 0.0, 0.0, 0.0, 0.9063, -0.4226, 0.0, 0.4226, 0.9063]}},
+      "Rock1": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.55, 0.6], "Material": "Slate", "Position": [-100, 1, -40], "Size": [4, 3, 4], "Shape": "Ball"}},
+      "Rock2": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.55, 0.6], "Material": "Slate", "Position": [100, 1.5, 40], "Size": [5, 4, 5], "Shape": "Ball"}},
+      "Rock3": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.55, 0.6], "Material": "Slate", "Position": [-40, 0.5, 100], "Size": [3, 2, 3], "Shape": "Ball"}},
+      "Rock4": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.55, 0.6], "Material": "Slate", "Position": [40, 1, -100], "Size": [4, 3, 4], "Shape": "Ball"}},
+      "Rock5": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.55, 0.6], "Material": "Slate", "Position": [-105, 1, 60], "Size": [3, 3, 3], "Shape": "Ball"}},
+      "Rock6": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.55, 0.6], "Material": "Slate", "Position": [105, 1, -30], "Size": [4, 3, 4], "Shape": "Ball"}},
+      "Rock7": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.55, 0.6], "Material": "Slate", "Position": [70, 0.5, 100], "Size": [3, 2, 3], "Shape": "Ball"}},
+      "Rock8": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.55, 0.6], "Material": "Slate", "Position": [-70, 1, -100], "Size": [5, 3, 5], "Shape": "Ball"}},
+      "Rock9": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.55, 0.6], "Material": "Slate", "Position": [0, 1, 105], "Size": [4, 3, 4], "Shape": "Ball"}},
+      "Rock10": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.55, 0.55, 0.6], "Material": "Slate", "Position": [100, 0.5, -95], "Size": [3, 2, 3], "Shape": "Ball"}},
+      "Umbrella1Pole": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Size": [4, 0.5, 0.5], "Shape": "Cylinder", "CFrame": [-40, 2, 75, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Umbrella1Top": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.9, 0.2, 0.2], "Material": "SmoothPlastic", "Size": [0.4, 7, 7], "Shape": "Cylinder", "CFrame": [-40, 4.2, 75, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Umbrella2Pole": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Size": [4, 0.5, 0.5], "Shape": "Cylinder", "CFrame": [40, 2, -75, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Umbrella2Top": {"$className": "Part", "$properties": {"Anchored": true, "Color": [1, 0.8, 0.1], "Material": "SmoothPlastic", "Size": [0.4, 7, 7], "Shape": "Cylinder", "CFrame": [40, 4.2, -75, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Umbrella3Pole": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Size": [4, 0.5, 0.5], "Shape": "Cylinder", "CFrame": [85, 2, 60, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "Umbrella3Top": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.15, 0.45, 0.95], "Material": "SmoothPlastic", "Size": [0.4, 7, 7], "Shape": "Cylinder", "CFrame": [85, 4.2, 60, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]}},
+      "SpawnPadFloor": {"$className": "Part", "$properties": {"Anchored": true, "Color": [0.95, 0.95, 0.95], "Material": "SmoothPlastic", "Position": [0, 0.1, 70], "Size": [8, 0.4, 8]}},
+      "SpawnLocation": {"$className": "SpawnLocation", "$properties": {"Anchored": true, "Color": [0.2, 0.9, 0.3], "Material": "SmoothPlastic", "Position": [0, 1, 70], "Size": [6, 1, 6], "Neutral": true}}
+    },
+    "Lighting": {
+      "$properties": {
+        "Ambient": [0.45, 0.32, 0.25],
+        "Brightness": 2,
+        "ClockTime": 17.4,
+        "FogColor": [0.95, 0.6, 0.45],
+        "FogEnd": 900,
+        "GeographicLatitude": 20,
+        "GlobalShadows": true,
+        "OutdoorAmbient": [0.75, 0.55, 0.4],
+        "Technology": "ShadowMap"
+      }
+    },
+    "SoundService": {
+      "$properties": {
+        "RespectFilteringEnabled": true
+      }
+    }
+  }
+}
